@@ -22,18 +22,6 @@ const orderSchema = new mongoose.Schema({
   orderManager: {
     type: String,
     required: true,
-    enum: [
-      "A.Cappello",
-      "L.Cappello",
-      "C.Toia",
-      "M.Cappello",
-      "F.Cusimano",
-      "G.Cusimano",
-      "M.Camarotta",
-      "Rostick",
-      "N.Blay",
-      "P.Zanda",
-    ],
   },
   activity: {
     ricezioneAccessori: {
@@ -51,18 +39,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
 
       note: {
@@ -86,18 +62,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
 
       note: {
@@ -121,18 +85,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -155,18 +107,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -189,18 +129,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -223,18 +151,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -257,18 +173,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -291,18 +195,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -325,18 +217,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,
@@ -359,18 +239,6 @@ const orderSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
       note: {
         type: String,

@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const mongoose = require("mongoose"); // Aggiunto
+const mongoose = require("mongoose");
 const Order = require("../models/Order");
 
 // Route per ottenere un singolo ordine
