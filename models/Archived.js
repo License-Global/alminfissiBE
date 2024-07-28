@@ -22,18 +22,6 @@ const archivedSchema = new mongoose.Schema({
   orderManager: {
     type: String,
     required: true,
-    enum: [
-      "A.Cappello",
-      "L.Cappello",
-      "C.Toia",
-      "M.Cappello",
-      "F.Cusimano",
-      "G.Cusimano",
-      "M.Camarotta",
-      "Rostick",
-      "N.Blay",
-      "P.Zanda",
-    ],
   },
   activity: {
     ricezioneAccessori: {
@@ -51,25 +39,14 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
 
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     ricezioneAlluminio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -87,25 +64,14 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
 
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     ricezioneVetri: {
       expire: { type: Date, default: Date.now, required: true },
@@ -123,24 +89,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     taglio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -158,24 +113,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     lavorazione: {
       expire: { type: Date, default: Date.now, required: true },
@@ -193,24 +137,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     assemblaggio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -228,24 +161,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     installazioneVetri: {
       expire: { type: Date, default: Date.now, required: true },
@@ -263,24 +185,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     imballaggio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -298,24 +209,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     trasporto: {
       expire: { type: Date, default: Date.now, required: true },
@@ -333,24 +233,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     consegnaInstallazione: {
       expire: { type: Date, default: Date.now, required: true },
@@ -368,24 +257,13 @@ const archivedSchema = new mongoose.Schema({
       activityManager: {
         type: String,
         required: true,
-        enum: [
-          "A.Cappello",
-          "L.Cappello",
-          "C.Toia",
-          "M.Cappello",
-          "F.Cusimano",
-          "G.Cusimano",
-          "M.Camarotta",
-          "Rostick",
-          "N.Blay",
-          "P.Zanda",
-        ],
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
   },
 });

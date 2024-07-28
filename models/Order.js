@@ -40,12 +40,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     ricezioneAlluminio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -64,11 +64,12 @@ const orderSchema = new mongoose.Schema({
         required: true,
       },
 
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     ricezioneVetri: {
       expire: { type: Date, default: Date.now, required: true },
@@ -86,11 +87,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     taglio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -108,11 +110,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     lavorazione: {
       expire: { type: Date, default: Date.now, required: true },
@@ -130,11 +133,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     assemblaggio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -152,11 +156,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     installazioneVetri: {
       expire: { type: Date, default: Date.now, required: true },
@@ -174,11 +179,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     imballaggio: {
       expire: { type: Date, default: Date.now, required: true },
@@ -196,11 +202,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     trasporto: {
       expire: { type: Date, default: Date.now, required: true },
@@ -218,11 +225,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
     consegnaInstallazione: {
       expire: { type: Date, default: Date.now, required: true },
@@ -240,11 +248,12 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      note: {
-        type: String,
-        required: false,
-        default: "",
-      },
+      note: [
+        {
+          date: { type: Date, default: Date.now, required: true },
+          content: { type: String, required: true },
+        },
+      ],
     },
   },
 });

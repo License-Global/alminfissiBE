@@ -26,7 +26,7 @@ router.get("/:orderId", async (req, res) => {
 router.patch("/:orderId/:activityField/note", async (req, res) => {
   try {
     const { orderId, activityField } = req.params;
-    const { note } = req.body;
+    const { content } = req.body;
 
     // Verifica se l'ID è valido
     if (!mongoose.Types.ObjectId.isValid(orderId)) {
@@ -34,17 +34,24 @@ router.patch("/:orderId/:activityField/note", async (req, res) => {
       return res.status(400).send("ID non valido");
     }
 
-    // Costruisci il percorso del campo dinamicamente
+    // Verifica se il contenuto della nota è presente
+    if (!content) {
+      return res.status(400).send("Content is required");
+    }
+
+    // Costruisci il percorso del campo dinamicamente per aggiungere la nota
     const updatePath = `activity.${activityField}.note`;
 
-    // Crea un oggetto per aggiornare il campo dinamicamente
-    const updateObject = {};
-    updateObject[updatePath] = note;
+    // Crea un oggetto per aggiungere la nuova nota
+    const newNote = {
+      date: new Date(),
+      content: content,
+    };
 
     // Esegui l'aggiornamento
     const updatedDoc = await Order.findByIdAndUpdate(
       orderId,
-      { $set: updateObject },
+      { $push: { [updatePath]: newNote } },
       { new: true }
     );
 
