@@ -42,8 +42,8 @@ const orderSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
