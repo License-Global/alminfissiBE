@@ -1,15 +1,10 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
 const mongoose = require("mongoose");
-const Order = require("../models/Order");
 const Archived = require("../models/Archived");
+const Order = require("../models/Order");
+const router = express.Router();
 
-const areAllActivitiesCompleted = (activities) => {
-  return Object.values(activities).every(
-    (activity) => activity.status === "Completato"
-  );
-};
-
+// Funzione per spostare l'ordine negli archivi
 const moveOrderToArchive = async (orderId) => {
   try {
     console.log(
@@ -24,15 +19,6 @@ const moveOrderToArchive = async (orderId) => {
       throw new Error("Ordine non trovato");
     }
 
-    // Verifica che tutte le attività siano completate
-    console.log(`Verifica delle attività per l'ordine ${orderId}`);
-    if (!areAllActivitiesCompleted(order.activity)) {
-      console.log(`Ordine ${orderId} non completato`);
-      throw new Error(
-        "Ordine non completato e quindi non può essere archiviato"
-      );
-    }
-
     // Crea un nuovo documento nella collezione ARCHIVE con i dati dell'ordine
     console.log(`Archiviazione dell'ordine ${orderId}`);
     const archivedOrder = new Archived(order);
@@ -44,6 +30,7 @@ const moveOrderToArchive = async (orderId) => {
   }
 };
 
+// Route per archiviare un ordine
 router.post("/:id", async (req, res) => {
   const orderId = req.params.id;
   try {
@@ -57,12 +44,7 @@ router.post("/:id", async (req, res) => {
       `Errore durante l'archiviazione dell'ordine ${orderId}:`,
       error.message
     );
-    if (
-      error.message ===
-      "Ordine non completato e quindi non può essere archiviato"
-    ) {
-      res.status(400).send(error.message);
-    } else if (error.message === "Ordine non trovato") {
+    if (error.message === "Ordine non trovato") {
       res.status(404).send(error.message);
     } else {
       res
@@ -72,6 +54,51 @@ router.post("/:id", async (req, res) => {
   }
 });
 
+router.patch("/:orderId/:activityField/note", async (req, res) => {
+  try {
+    const { orderId, activityField } = req.params;
+    const { content } = req.body;
+
+    // Verifica se l'ID è valido
+    if (!mongoose.Types.ObjectId.isValid(orderId)) {
+      console.log(`Invalid ID: ${orderId}`); // Log per debug
+      return res.status(400).send("ID non valido");
+    }
+
+    // Verifica se il contenuto della nota è presente
+    if (!content) {
+      return res.status(400).send("Content is required");
+    }
+
+    // Costruisci il percorso del campo dinamicamente per aggiungere la nota
+    const updatePath = `activity.${activityField}.note`;
+
+    // Crea un oggetto per aggiungere la nuova nota
+    const newNote = {
+      date: new Date(),
+      content: content,
+    };
+
+    // Esegui l'aggiornamento
+    const updatedDoc = await Archived.findByIdAndUpdate(
+      orderId,
+      { $push: { [updatePath]: newNote } },
+      { new: true }
+    );
+
+    if (!updatedDoc) {
+      console.log(`Order with ID: ${orderId} not found for update`); // Log per debug
+      return res.status(404).send("Documento non trovato");
+    }
+
+    res.send(updatedDoc);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
+});
+
+// Route per recuperare tutti gli ordini archiviati
 router.get("/", async (req, res) => {
   try {
     console.log("Richiesta di recupero di tutti gli ordini archiviati");
@@ -86,6 +113,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Route per recuperare un ordine archiviato specifico
 router.get("/:id", async (req, res) => {
   const orderId = req.params.id;
   try {
@@ -108,6 +136,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// Route per eliminare un ordine archiviato
 router.delete("/:id", async (req, res) => {
   const orderId = req.params.id;
   try {

@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const archivedSchema = new mongoose.Schema({
+  time: { type: Date, default: Date.now },
   orderName: {
     type: String,
     required: true,
-    unique: true,
   },
   materialShelf: {
     type: String,
@@ -40,11 +40,10 @@ const archivedSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -53,9 +52,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -68,8 +66,8 @@ const archivedSchema = new mongoose.Schema({
 
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -78,9 +76,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -92,8 +89,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -102,9 +99,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -116,8 +112,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -126,9 +122,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -140,8 +135,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -150,9 +145,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -164,8 +158,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -174,9 +168,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -188,8 +181,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -198,9 +191,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -212,8 +204,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -222,9 +214,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -236,8 +227,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
@@ -246,9 +237,8 @@ const archivedSchema = new mongoose.Schema({
       completed: { type: Date, default: null },
       status: {
         type: String,
-        enum: ["Completato"],
-        // default: "Standby",
-        // enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
+        default: "Standby",
+        enum: ["Lavorazione", "Standby", "Bloccato", "Completato"],
       },
       target: {
         type: String,
@@ -260,8 +250,8 @@ const archivedSchema = new mongoose.Schema({
       },
       note: [
         {
-          date: { type: Date, default: Date.now, required: true },
-          content: { type: String, required: true },
+          date: { type: Date, default: Date.now, required: false },
+          content: { type: String, required: false },
         },
       ],
     },
